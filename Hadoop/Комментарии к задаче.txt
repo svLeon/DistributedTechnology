@@ -1,0 +1,15 @@
+-----------------------------------------------------------------------
+
+http://www.glennklockwood.com/di/hadoop-streaming.php
+
+bin/hadoop fs -mkdir counts
+bin/hadoop fs -copyFromLocal ./text.txt counts/text.txt
+
+bin/hadoop \
+   jar hadoop-streaming.jar \
+   -mapper "python mapper.py" \
+   -reducer "python reducer.py" \
+   -input "counts/text.txt"   \
+   -output "counts/output"
+------------------------------------------------------------------------
+
