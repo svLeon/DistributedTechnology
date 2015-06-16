@@ -1,0 +1,8 @@
+1) Выполняем erl -sname distrib@localhost -setcookie cake
+2) (distrib@localhost)1> c(distributor).
+3) Выполняем erl -sname client@localhost -setcookie cake
+4) (client@localhost)1> c(client).
+5) (client@localhost)2> client:start().
+	На экран выводится листинг текущей директории, среди показанных файлов нужно выбрать номер
+	одного из них (считая от 1 сверху внуз), после чего на экран выведутся
+	имя файла и его содержимое.
